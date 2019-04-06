@@ -8,8 +8,8 @@ IEFP job offers scraper. Writes all job postings in a file, in JSON format.
 ## How to
 
 - Clone repo
-- Run `yarn`
-- `node index.js` and pray it doesn't timeout
+- Run `yarn` to install dependencies
+- `yarn fetch` and pray it doesn't timeout
 
 ### Example object
 

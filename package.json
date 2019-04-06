@@ -5,6 +5,9 @@
   "license": "MIT",
   "author": "Pedro Abreu",
   "repository": "https://github.com/pedroabreu/iefp-scrape.git",
+  "scripts": {
+    "fetch": "node ./src/index"
+  },
   "dependencies": {
     "lodash": "^4.17.11",
     "node-html-parser": "^1.1.14",
