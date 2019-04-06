@@ -1,0 +1,13 @@
+{
+  "name": "iefp-scrape",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "Pedro Abreu",
+  "repository": "https://github.com/pedroabreu/iefp-scrape.git",
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "node-html-parser": "^1.1.14",
+    "superagent": "^5.0.2"
+  }
+}
