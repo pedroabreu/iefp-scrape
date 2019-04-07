@@ -20,16 +20,16 @@ const getJobInformationFromPage = require('./utils/getJobInformationFromPage')
         console.log("end page", i)
     }
 
-    const jobDescription = []
+    const jobDescription = {}
 
-    for (let i = 0; i < allOffersIds.length; i++) {
+    for (let i = 0; i < 2; i++) {
         const jobId = allOffersIds[i]
         console.log("starting profile", jobId)
 
         const jobPage = await getJobPostingPage(jobId)
         const jobInfo = getJobInformationFromPage(jobPage, jobId)
 
-        jobDescription.push(jobInfo)
+        jobDescription[jobInfo.id] = jobInfo
 
         console.log("end profile", jobId)
     }
