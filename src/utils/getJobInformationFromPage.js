@@ -1,25 +1,25 @@
 const _ = require('lodash')
 
+const getOfferField = (field) => (node) => {
+    if(!node.rawAttrs) return false
+    return node.rawAttrs.indexOf(field) > 0
+}
+
 const getJobInformation = function getJobInformation(page, jobId) {
     const details = page.querySelectorAll(".row.element-margin")
 
     const descricao = details.reduce((acc, element) => {
         const children = element.childNodes
-        const offer_condition = _.find(children, (node) => {
-            if(!node.rawAttrs) return false
-            return node.rawAttrs.indexOf("offer_condition") > 0
-        })
-        let offer_condition_description = _.find(children, (node) => {
-            if(!node.rawAttrs) return false
-            return node.rawAttrs.indexOf("offer_condition_description") > 0
-        })
+        const offerCondition = _.find(children, getOfferField("offer_condition"))
+        const offerDescription = _.find(children, getOfferField("offer_condition_description"))
+
         try {
-            if (offer_condition.innerHTML !== offer_condition_description.innerHTML) {
-                const title = _.snakeCase(offer_condition.innerHTML.trim())
-                acc[title] = offer_condition_description.innerHTML.trim()
+            if (offerCondition.innerHTML !== offerDescription.innerHTML) {
+                const title = _.snakeCase(offerCondition.innerHTML.trim())
+                acc[title] = offerDescription.innerHTML.trim()
             }
             else {
-                acc["perfil"] = offer_condition_description.innerHTML.trim()
+                acc["perfil"] = offerDescription.innerHTML.trim()
             }
         } catch(e) {
         }
