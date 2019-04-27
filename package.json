@@ -9,6 +9,7 @@
     "fetch": "node ./src/index"
   },
   "dependencies": {
+    "iconv-lite": "^0.4.24",
     "lodash": "^4.17.11",
     "node-html-parser": "^1.1.14",
     "superagent": "^5.0.2"
